@@ -31,3 +31,20 @@
 {"level":"info","ts":"2020-06-16 15:27:21","caller":"api/main.go:47","msg":"Received system signal[interrupt]"}
 {"level":"info","ts":"2020-06-16 15:27:21","caller":"api/main.go:36","msg":"error channel close"}
 {"level":"info","ts":"2020-06-16 15:27:21","caller":"service/http.go:49","msg":"http server has shut down"}
+{"level":"info","ts":"2020-06-16 18:03:10","caller":"service/http.go:43","msg":"http server running on port: 9000"}
+{"level":"info","ts":"2020-06-16 18:04:59","caller":"api/main.go:47","msg":"Received system signal[interrupt]"}
+{"level":"info","ts":"2020-06-16 18:04:59","caller":"api/main.go:36","msg":"error channel close"}
+{"level":"info","ts":"2020-06-16 18:04:59","caller":"service/http.go:49","msg":"http server has shut down"}
+{"level":"info","ts":"2020-06-16 18:05:02","caller":"service/http.go:43","msg":"http server running on port: 9000"}
+{"level":"info","ts":"2020-06-16 18:05:04","caller":"middleware/session.go:19","msg":"user -- <nil>"}
+{"level":"info","ts":"2020-06-16 18:19:57","caller":"service/http.go:43","msg":"http server running on port: 9000"}
+{"level":"info","ts":"2020-06-16 18:20:05","caller":"api/main.go:47","msg":"Received system signal[interrupt]"}
+{"level":"info","ts":"2020-06-16 18:20:05","caller":"service/http.go:49","msg":"http server has shut down"}
+{"level":"info","ts":"2020-06-16 18:20:05","caller":"api/main.go:36","msg":"error channel close"}
+{"level":"info","ts":"2020-06-16 18:20:18","caller":"api/main.go:47","msg":"Received system signal[interrupt]"}
+{"level":"info","ts":"2020-06-16 18:20:18","caller":"api/main.go:36","msg":"error channel close"}
+{"level":"info","ts":"2020-06-16 18:20:18","caller":"service/http.go:49","msg":"http server has shut down"}
+{"level":"info","ts":"2020-06-16 18:20:24","caller":"service/http.go:43","msg":"http server running on port: 9000"}
+{"level":"info","ts":"2020-06-16 18:37:04","caller":"api/main.go:47","msg":"Received system signal[interrupt]"}
+{"level":"info","ts":"2020-06-16 18:37:04","caller":"api/main.go:36","msg":"error channel close"}
+{"level":"info","ts":"2020-06-16 18:37:04","caller":"service/http.go:49","msg":"http server has shut down"}

@@ -3,6 +3,8 @@ module api
 go 1.13
 
 require (
+	code.snowplus.cn/snowplus/errno v0.1.21 // indirect
+	github.com/gin-contrib/sessions v0.0.3
 	github.com/gin-gonic/gin v1.6.3
 	github.com/lestrrat-go/file-rotatelogs v2.3.0+incompatible
 	github.com/lestrrat-go/strftime v1.0.1 // indirect

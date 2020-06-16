@@ -26,10 +26,16 @@ func Init() error {
 }
 
 type Config struct {
-	Http HttpConfig `json:"http"`
+	Http  HttpConfig  `json:"http"`
+	Redis RedisConfig `json:"redis"`
 }
 
 type HttpConfig struct {
 	Port int    `json:"port"`
 	Mode string `json:"mode"`
+}
+
+type RedisConfig struct {
+	Dsn      string `json:"dsn"`
+	Password string `json:"password"`
 }

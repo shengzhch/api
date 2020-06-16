@@ -12,6 +12,21 @@ message WelcomeResp {
 
 }
 
+enum LoginType {
+    Unknown = 0;
+    NamePd = 1;
+}
+
+message LoginReq {
+    LoginType login_type = 1;
+    string name = 2;
+    string passwd = 3;
+}
+
+message LoginResp {
+
+}
+
 service ApiService {
     rpc Welcome (WelcomeReq) returns (WelcomeResp) {
         option (google.api.http) = {

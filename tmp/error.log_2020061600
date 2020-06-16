@@ -6,3 +6,4 @@
 {"level":"error","ts":"2020-06-16 14:40:57","caller":"service/http.go:39","msg":"http: Server closed"}
 {"level":"error","ts":"2020-06-16 14:40:57","caller":"api/main.go:32","msg":"http: Server closed"}
 {"level":"error","ts":"2020-06-16 14:43:14","caller":"api/main.go:32","msg":"http: Server closed"}
+{"level":"error","ts":"2020-06-16 18:19:57","caller":"api/main.go:33","msg":"listen tcp :9000: bind: address already in use"}
