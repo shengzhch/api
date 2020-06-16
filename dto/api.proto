@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package dto;
+
+import "google/api/annotations.proto";
+
+message WelcomeReq {
+
+}
+
+message WelcomeResp {
+
+}
+
+service ApiService {
+    rpc Welcome (WelcomeReq) returns (WelcomeResp) {
+        option (google.api.http) = {
+            get: "/api/v1/welcome"
+        };
+    }
+}
+
+service ApiService2 {
+    rpc Welcome2 (WelcomeReq) returns (WelcomeResp) {
+        option (google.api.http) = {
+            get: "/api/v1/welcome2"
+        };
+    }
+}

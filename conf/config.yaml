@@ -1,0 +1,3 @@
+http:
+  model: debug
+  port: 9000
