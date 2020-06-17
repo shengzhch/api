@@ -20,10 +20,10 @@ func main() {
 		panic(err)
 	}
 	// service init
-	svc := service.NewServer(conf.Conf)
+	svc := service.NewHttpServer(conf.Conf)
 	ctx, cancel := context.WithCancel(context.Background())
 	errCh := make(chan error, 10)
-	service.Run(ctx, svc, errCh)
+	service.HttpRun(ctx, svc, errCh)
 
 	go func() {
 		for {

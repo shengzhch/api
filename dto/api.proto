@@ -18,8 +18,11 @@ enum LoginType {
 }
 
 message LoginReq {
+    //@inject_tag: form:"login_type"
     LoginType login_type = 1;
+    //@inject_tag: form:"name"
     string name = 2;
+    //@inject_tag: form:"passwd"
     string passwd = 3;
 }
 

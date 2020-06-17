@@ -46,6 +46,7 @@ func wrapper(f interface{}) func(*gin.Context) {
 		req := reflect.New(typ.In(1).Elem()).Interface()
 		c.Set("request", req)
 		if err := c.ShouldBind(req); err != nil {
+			log.Error(err)
 			c.Abort()
 			c.JSON(400, xerror.Unknown)
 		}
@@ -74,19 +75,18 @@ func Register(app *gin.Engine) {
 	url := ginSwagger.URL("/api/swagger.json")
 	app.GET("/api/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler, url))
 
-	store, err := redis.NewStore(10, "tcp", conf.Conf.Redis.Dsn, conf.Conf.Redis.Password, []byte("auth"), []byte("key"))
+	store, err := redis.NewStore(10, "tcp", conf.Conf.Redis.Dsn, conf.Conf.Redis.Password, []byte("secret"))
 	if err != nil {
 		panic(err)
 	}
 	store.Options(sessions.Options{MaxAge: 84200, Path: "/"})
 
 	app.Use(sessions.Sessions("api", store))
-
 	//sso 单点登录
 	sso := app.Group("/sso")
 	{
 		sso.GET("/login", wrapper(controller.Login))
 		sso.GET("/welcome", controller.Welcome)
-		sso.GET("/welcome2", middleware.RequireLogin, controller.Welcome)
+		sso.GET("/welcome2", middleware.RequireLogin, controller.Welcome2)
 	}
 }

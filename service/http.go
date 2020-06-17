@@ -16,7 +16,7 @@ type HttpServer struct {
 	App  *gin.Engine
 }
 
-func NewServer(c *conf.Config) *HttpServer {
+func NewHttpServer(c *conf.Config) *HttpServer {
 	app := newGinEngine(c.Http.Mode)
 	return &HttpServer{Port: c.Http.Port, App: app}
 }
@@ -27,7 +27,7 @@ func newGinEngine(mode string) *gin.Engine {
 	return app
 }
 
-func Run(ctx context.Context, s *HttpServer, errCh chan error) {
+func HttpRun(ctx context.Context, s *HttpServer, errCh chan error) {
 	router.Register(s.App)
 	srv := &http.Server{
 		Addr:    fmt.Sprintf(":%v", s.Port),

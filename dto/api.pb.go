@@ -113,12 +113,15 @@ func (m *WelcomeResp) XXX_DiscardUnknown() {
 var xxx_messageInfo_WelcomeResp proto.InternalMessageInfo
 
 type LoginReq struct {
-	LoginType            LoginType `protobuf:"varint,1,opt,name=login_type,json=loginType,proto3,enum=dto.LoginType" json:"login_type,omitempty"`
-	Name                 string    `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Passwd               string    `protobuf:"bytes,3,opt,name=passwd,proto3" json:"passwd,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}  `json:"-"`
-	XXX_unrecognized     []byte    `json:"-"`
-	XXX_sizecache        int32     `json:"-"`
+	//@inject_tag: form:"login_type"
+	LoginType LoginType `protobuf:"varint,1,opt,name=login_type,json=loginType,proto3,enum=dto.LoginType" json:"login_type,omitempty" form:"login_type"`
+	//@inject_tag: form:"name"
+	Name string `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty" form:"name"`
+	//@inject_tag: form:"passwd"
+	Passwd               string   `protobuf:"bytes,3,opt,name=passwd,proto3" json:"passwd,omitempty" form:"passwd"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
 }
 
 func (m *LoginReq) Reset()         { *m = LoginReq{} }
