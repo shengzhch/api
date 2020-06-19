@@ -4,6 +4,7 @@ go 1.13
 
 require (
 	code.snowplus.cn/snowplus/errno v0.1.21 // indirect
+	github.com/bitly/go-simplejson v0.5.0 // indirect
 	github.com/gin-contrib/sessions v0.0.3
 	github.com/gin-gonic/gin v1.6.3
 	github.com/go-playground/validator v9.31.0+incompatible

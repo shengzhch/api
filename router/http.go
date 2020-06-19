@@ -80,7 +80,6 @@ func Register(app *gin.Engine) {
 		panic(err)
 	}
 	store.Options(sessions.Options{MaxAge: 84200, Path: "/"})
-
 	app.Use(sessions.Sessions("api", store))
 	//sso 单点登录
 	sso := app.Group("/sso")
@@ -89,4 +88,9 @@ func Register(app *gin.Engine) {
 		sso.GET("/welcome", controller.Welcome)
 		sso.GET("/welcome2", middleware.RequireLogin, controller.Welcome2)
 	}
+
+
+
+
+
 }
