@@ -33,6 +33,8 @@ type Channel interface {
 	DataAvailable(Protocol, Packet, bool, error)
 	Start() error
 	Stop() error
+
+	Configuration() *util.Config
 }
 
 func RegisterChannelFactory(s string, creator ChannelFactory) {

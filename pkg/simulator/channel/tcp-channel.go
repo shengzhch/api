@@ -1,4 +1,4 @@
-package server
+package channel
 
 import (
 	"api/log"
@@ -52,6 +52,10 @@ type TCPChannel struct {
 	newConnectionChan chan net.Conn
 	conn              net.Conn
 	faceName          string
+}
+
+func (this *TCPChannel) Configuration() *util.Config {
+	return this.config
 }
 
 func (this *TCPChannel) GetProtocol() base.Protocol {

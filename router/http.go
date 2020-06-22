@@ -89,6 +89,12 @@ func Register(app *gin.Engine) {
 		sso.GET("/welcome2", middleware.RequireLogin, controller.Welcome2)
 	}
 
+	//
+	simu := app.Group("simu")
+	{
+		simu.GET("/monitor/start", controller.Welcome)
+	}
+
 
 
 
