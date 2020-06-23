@@ -1,0 +1,9 @@
+{"level":"fatal","ts":"2020-06-23 13:47:22","caller":"client/client.go:27","msg":"dial:websocket: bad handshake"}
+{"level":"fatal","ts":"2020-06-23 13:48:12","caller":"client/client.go:27","msg":"dial:websocket: bad handshake"}
+{"level":"fatal","ts":"2020-06-23 13:50:21","caller":"client/client.go:27","msg":"dial:websocket: bad handshake"}
+{"level":"fatal","ts":"2020-06-23 13:50:51","caller":"client/client.go:27","msg":"dial:websocket: bad handshake"}
+{"level":"fatal","ts":"2020-06-23 13:53:15","caller":"client/client.go:27","msg":"dial:websocket: bad handshake"}
+{"level":"fatal","ts":"2020-06-23 13:54:22","caller":"client/client.go:27","msg":"dial:websocket: bad handshake"}
+{"level":"fatal","ts":"2020-06-23 13:55:52","caller":"client/client.go:27","msg":"dial:websocket: bad handshake"}
+{"level":"fatal","ts":"2020-06-23 13:57:17","caller":"client/client.go:27","msg":"dial:websocket: bad handshake"}
+{"level":"fatal","ts":"2020-06-23 14:05:40","caller":"client/client.go:27","msg":"dial:dial tcp [::1]:9000: connect: connection refused"}

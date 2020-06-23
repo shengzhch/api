@@ -53,9 +53,9 @@ func (h *TcpStream) run() {
 		}
 		var n = 0
 		var err error = nil
-		buf := make([]byte, 2048)
+		buf := make([]byte, 1024*1024*64)
 		if n, err = r.Read(buf); err != nil {
-			log.Error("telnetProtocol:reading data failed: ", err)
+			log.Error("reading data failed: ", err)
 			return
 		}
 

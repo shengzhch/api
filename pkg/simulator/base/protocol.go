@@ -1,6 +1,7 @@
 package base
 
 import (
+	"api/log"
 	"fmt"
 	"net"
 
@@ -26,6 +27,7 @@ type ProtocolFactory interface {
 }
 
 func NewProtocol(name string, c *util.Config) (Protocol, error) {
+	log.Info("protocol name ", name, protocolFactories[name])
 	if protocolFactories[name] != nil {
 		return protocolFactories[name].New(c)
 	}

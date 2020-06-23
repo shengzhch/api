@@ -16,6 +16,14 @@ func SetDefault(l *Logger) {
 	defaultLogger = l
 }
 
+func Printf(format string, args ...interface{}) {
+	defaultLogger.Infof(format, args...)
+}
+
+func Println(args ...interface{}) {
+	defaultLogger.Info(args...)
+}
+
 // Debug prints a debug-level log by default logger instance.
 func Debug(args ...interface{}) {
 	defaultLogger.Debug(args...)

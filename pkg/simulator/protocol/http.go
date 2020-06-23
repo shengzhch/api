@@ -60,15 +60,23 @@ type httpPacket struct {
 func (this *httpPacket) String() string {
 	if this.DataType == 0 {
 		return this.req.URL.String()
-	} else {
+	} else if this.DataType == 1 {
 		var buffer bytes.Buffer
-		_, err := buffer.ReadFrom(this.resp.Body)
+		_, err := buffer.ReadFrom(this.req.Body)
 		if err != nil {
 			log.Error("err", err)
 			return ""
 		}
 		return buffer.String()
 	}
+
+	var buffer bytes.Buffer
+	_, err := buffer.ReadFrom(this.resp.Body)
+	if err != nil {
+		log.Error("err", err)
+		return ""
+	}
+	return buffer.String()
 }
 
 func (this *httpPacket) Bytes() []byte {

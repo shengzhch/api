@@ -9,6 +9,7 @@ type Config struct {
 }
 
 func NewConfig() (*Config, error) {
+	//todo
 	return &Config{vals: simplejson.New()}, nil
 }
 

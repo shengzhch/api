@@ -50,6 +50,10 @@ func (this *TCPReceiverFactory) New(c *util.Config) (base.Channel, error) {
 	return &ch, nil
 }
 
+func init() {
+	base.RegisterChannelFactory("tcp-reveiver", &TCPReceiverFactory{})
+}
+
 func (this *TCPReceiver) GetProtocol() base.Protocol {
 	return this.proto
 }
@@ -81,6 +85,7 @@ func (this *TCPReceiver) Start() error {
 	var flag bool
 	for _, devVal := range dev {
 		for _, ipVal := range devVal.Addresses {
+			log.Info("dev - ip ", devVal.Name, ipVal.IP)
 			if ipVal.IP.String() == this.config.Get("sip").MustString() || ipVal.IP.String() == this.config.Get("dip").MustString() {
 				flag = true
 				iface = devVal.Name
@@ -97,7 +102,7 @@ func (this *TCPReceiver) Start() error {
 	// Set up pcap packet capture
 	var err error
 	if iface != "" {
-		log.Info("Starting capture on interface %q", iface)
+		log.Infof("Starting capture on interface %v", iface)
 		this.handler, err = pcap.OpenLive(iface, 1600, true, pcap.BlockForever)
 		if err != nil {
 			log.Error(err)
@@ -112,7 +117,24 @@ func (this *TCPReceiver) Start() error {
 	sip := this.config.Get("sip").MustString()
 	dip := this.config.Get("dip").MustString()
 
-	var filter = "host " + sip + " and host " + dip + " and port " + tcpport
+	var filter string
+	if sip != "" {
+		filter = "host " + sip
+	}
+
+	if dip != "" {
+		if filter != "" {
+			filter = filter + " and host " + dip
+		} else {
+			filter = "host " + dip
+		}
+	}
+	if filter == "" {
+		filter = "port " + tcpport
+	} else {
+		filter = filter + " and port " + tcpport
+	}
+
 	log.Info(filter)
 
 	if err := this.handler.SetBPFFilter(filter); err != nil {

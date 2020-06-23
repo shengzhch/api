@@ -1,0 +1,46 @@
+{"level":"info","ts":"2020-06-23 13:47:22","caller":"client/client.go:23","msg":"connecting to ws://localhost:9000/monitor/start"}
+{"level":"info","ts":"2020-06-23 13:48:12","caller":"client/client.go:23","msg":"connecting to ws://localhost:9000/simu/monitor/start"}
+{"level":"info","ts":"2020-06-23 13:50:21","caller":"client/client.go:23","msg":"connecting to ws://localhost:9000/simu/monitor/start"}
+{"level":"info","ts":"2020-06-23 13:50:51","caller":"client/client.go:23","msg":"connecting to ws://localhost:9000/simu/monitor/start"}
+{"level":"info","ts":"2020-06-23 13:53:15","caller":"client/client.go:23","msg":"connecting to ws://localhost:9000/simu/monitor/start"}
+{"level":"info","ts":"2020-06-23 13:54:22","caller":"client/client.go:23","msg":"connecting to ws://localhost:9000/simu/monitor/start"}
+{"level":"info","ts":"2020-06-23 13:55:52","caller":"client/client.go:23","msg":"connecting to ws://localhost:9000/simu/monitor/start"}
+{"level":"info","ts":"2020-06-23 13:57:17","caller":"client/client.go:23","msg":"connecting to ws://localhost:9000/simu/monitor/start"}
+{"level":"info","ts":"2020-06-23 14:02:09","caller":"client/client.go:23","msg":"connecting to ws://localhost:9000/simu/monitor/start"}
+{"level":"info","ts":"2020-06-23 14:02:50","caller":"client/client.go:38","msg":"read:read tcp [::1]:51779->[::1]:9000: read: connection reset by peer"}
+{"level":"info","ts":"2020-06-23 14:04:25","caller":"client/client.go:23","msg":"connecting to ws://localhost:9000/simu/monitor/start"}
+{"level":"info","ts":"2020-06-23 14:04:28","caller":"client/client.go:38","msg":"read:read tcp [::1]:54521->[::1]:9000: read: connection reset by peer"}
+{"level":"info","ts":"2020-06-23 14:05:40","caller":"client/client.go:23","msg":"connecting to ws://localhost:9000/simu/monitor/start"}
+{"level":"info","ts":"2020-06-23 14:06:02","caller":"client/client.go:23","msg":"connecting to ws://localhost:9000/simu/monitor/start"}
+{"level":"info","ts":"2020-06-23 14:10:02","caller":"client/client.go:38","msg":"read:read tcp [::1]:56502->[::1]:9000: read: connection reset by peer"}
+{"level":"info","ts":"2020-06-23 14:14:23","caller":"client/client.go:23","msg":"connecting to ws://localhost:9000/simu/monitor/start"}
+{"level":"info","ts":"2020-06-23 14:16:13","caller":"client/client.go:38","msg":"read:read tcp [::1]:50218->[::1]:9000: read: connection reset by peer"}
+{"level":"info","ts":"2020-06-23 14:16:19","caller":"client/client.go:23","msg":"connecting to ws://localhost:9000/simu/monitor/start"}
+{"level":"info","ts":"2020-06-23 14:16:34","caller":"client/client.go:38","msg":"read:read tcp [::1]:52541->[::1]:9000: read: connection reset by peer"}
+{"level":"info","ts":"2020-06-23 14:29:14","caller":"client/client.go:23","msg":"connecting to ws://localhost:9000/simu/monitor/start"}
+{"level":"info","ts":"2020-06-23 14:29:18","caller":"client/client.go:41","msg":"recv: {\"type\":2,\"content\":\"\",\"systime\":\"2020-06-23 14:29:18\"}"}
+{"level":"info","ts":"2020-06-23 14:29:20","caller":"client/client.go:41","msg":"recv: {\"type\":2,\"content\":\"\",\"systime\":\"2020-06-23 14:29:20\"}"}
+{"level":"info","ts":"2020-06-23 14:29:37","caller":"client/client.go:38","msg":"read:read tcp [::1]:51675->[::1]:9000: read: connection reset by peer"}
+{"level":"info","ts":"2020-06-23 14:30:07","caller":"client/client.go:23","msg":"connecting to ws://localhost:9000/simu/monitor/start"}
+{"level":"info","ts":"2020-06-23 14:31:02","caller":"client/client.go:41","msg":"recv: {\"type\":1,\"content\":\"\",\"systime\":\"2020-06-23 14:31:02\"}"}
+{"level":"info","ts":"2020-06-23 14:31:03","caller":"client/client.go:41","msg":"recv: {\"type\":2,\"content\":\"\",\"systime\":\"2020-06-23 14:31:03\"}"}
+{"level":"info","ts":"2020-06-23 14:34:37","caller":"client/client.go:59","msg":"interrupt"}
+{"level":"info","ts":"2020-06-23 14:36:53","caller":"client/client.go:23","msg":"connecting to ws://localhost:9000/simu/monitor/start"}
+{"level":"info","ts":"2020-06-23 14:37:06","caller":"client/client.go:59","msg":"interrupt"}
+{"level":"info","ts":"2020-06-23 14:41:49","caller":"client/client.go:23","msg":"connecting to ws://localhost:9000/simu/monitor/start"}
+{"level":"info","ts":"2020-06-23 14:42:26","caller":"client/client.go:38","msg":"read:read tcp [::1]:50665->[::1]:9000: read: connection reset by peer"}
+{"level":"info","ts":"2020-06-23 14:43:02","caller":"client/client.go:23","msg":"connecting to ws://localhost:9000/simu/monitor/start"}
+{"level":"info","ts":"2020-06-23 14:46:19","caller":"client/client.go:38","msg":"read:read tcp [::1]:52182->[::1]:9000: read: connection reset by peer"}
+{"level":"info","ts":"2020-06-23 14:46:48","caller":"client/client.go:23","msg":"connecting to ws://localhost:9000/simu/monitor/start"}
+{"level":"info","ts":"2020-06-23 14:46:56","caller":"client/client.go:38","msg":"read:read tcp [::1]:57022->[::1]:9000: read: connection reset by peer"}
+{"level":"info","ts":"2020-06-23 14:48:16","caller":"client/client.go:23","msg":"connecting to ws://localhost:9000/simu/monitor/start"}
+{"level":"info","ts":"2020-06-23 14:48:44","caller":"client/client.go:38","msg":"read:read tcp [::1]:58785->[::1]:9000: read: connection reset by peer"}
+{"level":"info","ts":"2020-06-23 14:49:01","caller":"client/client.go:23","msg":"connecting to ws://localhost:9000/simu/monitor/start"}
+{"level":"info","ts":"2020-06-23 14:49:03","caller":"client/client.go:38","msg":"read:read tcp [::1]:59713->[::1]:9000: read: connection reset by peer"}
+{"level":"info","ts":"2020-06-23 14:49:10","caller":"client/client.go:23","msg":"connecting to ws://localhost:9000/simu/monitor/start"}
+{"level":"info","ts":"2020-06-23 14:55:36","caller":"client/client.go:23","msg":"connecting to ws://localhost:9000/simu/monitor/start"}
+{"level":"info","ts":"2020-06-23 14:59:36","caller":"client/client.go:38","msg":"read:read tcp [::1]:51291->[::1]:9000: read: connection reset by peer"}
+{"level":"info","ts":"2020-06-23 14:59:44","caller":"client/client.go:23","msg":"connecting to ws://localhost:9000/simu/monitor/start"}
+{"level":"info","ts":"2020-06-23 15:00:20","caller":"client/client.go:38","msg":"read:read tcp [::1]:56565->[::1]:9000: read: connection reset by peer"}
+{"level":"info","ts":"2020-06-23 15:03:03","caller":"client/client.go:23","msg":"connecting to ws://localhost:9000/simu/monitor/start"}
+{"level":"info","ts":"2020-06-23 15:03:56","caller":"client/client.go:38","msg":"read:read tcp [::1]:60580->[::1]:9000: read: connection reset by peer"}

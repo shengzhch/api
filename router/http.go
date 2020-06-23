@@ -92,11 +92,7 @@ func Register(app *gin.Engine) {
 	//
 	simu := app.Group("simu")
 	{
-		simu.GET("/monitor/start", controller.Welcome)
+		simu.GET("/monitor/start", controller.MoniStart)
 	}
-
-
-
-
 
 }
