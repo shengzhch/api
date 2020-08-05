@@ -19,6 +19,19 @@ func (e *Error) CopyWithPrompt(p string) *Error {
 	}
 }
 
+func (e *Error) As(err interface{}) bool {
+	_, ok := err.(*Error)
+	return ok
+}
+
+func (e *Error) Is(err interface{}) bool {
+	rel, ok := err.(*Error)
+	if !ok {
+		return false
+	}
+	return e == rel
+}
+
 func register(status, code int, m, p string) *Error {
 	return &Error{status, code, m, p}
 }

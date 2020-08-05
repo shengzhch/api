@@ -1,12 +1,12 @@
 package service
 
 import (
-	"context"
-	"fmt"
-	"net/http"
 	"api/conf"
 	"api/log"
 	"api/router"
+	"context"
+	"fmt"
+	"net/http"
 
 	"github.com/gin-gonic/gin"
 )
@@ -24,6 +24,7 @@ func NewHttpServer(c *conf.Config) *HttpServer {
 func newGinEngine(mode string) *gin.Engine {
 	gin.SetMode(mode)
 	app := gin.Default()
+	//app.Use(middleware.GinLogger(log.Default()), middleware.GinRecovery(log.Default()))
 	return app
 }
 

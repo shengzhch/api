@@ -89,6 +89,9 @@ func New(options ...Option) *Logger {
 		cores = append(cores, l.fileCore())
 	}
 	core := zapcore.NewTee(cores...)
+	//errorEnabler := zap.LevelEnablerFunc(func(lev zapcore.Level) bool {
+	//	return lev >= l.level && lev >= zapcore.ErrorLevel
+	//})
 	zapLogger := zap.New(core, zap.AddCaller(), zap.AddCallerSkip(1))
 	l.SugaredLogger = zapLogger.Sugar()
 	return l

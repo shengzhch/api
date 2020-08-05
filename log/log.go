@@ -1,5 +1,6 @@
 package log
 
+
 var defaultLogger *Logger
 
 func init() {
