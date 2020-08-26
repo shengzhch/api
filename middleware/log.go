@@ -1,6 +1,8 @@
 package middleware
 
 import (
+	"context"
+	"fmt"
 	"net"
 	"net/http"
 	"net/http/httputil"
@@ -10,6 +12,7 @@ import (
 	"time"
 
 	"api/log"
+	"google.golang.org/grpc"
 
 	"github.com/gin-gonic/gin"
 	"go.uber.org/zap"
@@ -80,4 +83,18 @@ func GinRecovery(logger *log.Logger) gin.HandlerFunc {
 		}()
 		c.Next()
 	}
+}
+
+func LogUnary(ctx context.Context, req interface{}, info *grpc.UnaryServerInfo, handler grpc.UnaryHandler) (interface{}, error) {
+	i := strings.LastIndex(info.FullMethod, "/")
+	method := info.FullMethod[i+1:]
+	st := time.Now()
+	resp, err := handler(ctx, req)
+	latency := time.Since(st)
+	log.Infow("grpc access log",
+		"method", method,
+		"request", fmt.Sprintf("%+v", req),
+		"latency(ms)", latency.Milliseconds(),
+	)
+	return resp, err
 }

@@ -30,7 +30,7 @@ func newGinEngine(mode string) *gin.Engine {
 
 func HttpRun(ctx context.Context, s *HttpServer, errCh chan error) {
 
-	router.Register(s.App)
+	router.RegisterHttp(s.App)
 
 	srv := &http.Server{
 		Addr:    fmt.Sprintf(":%v", s.Port),

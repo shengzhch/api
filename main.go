@@ -3,6 +3,7 @@ package main
 import (
 	"api/conf"
 	"api/log"
+	"api/middleware"
 	"api/service"
 
 	"context"
@@ -19,11 +20,16 @@ func main() {
 		log.Error("conf.Init() error(%v)", err)
 		panic(err)
 	}
-	// service init
-	svc := service.NewHttpServer(conf.Conf)
+	middleware.InitTracer(conf.Conf.Jaeger)
+
 	ctx, cancel := context.WithCancel(context.Background())
 	errCh := make(chan error, 10)
+	// service init
+	svc := service.NewHttpServer(conf.Conf)
 	service.HttpRun(ctx, svc, errCh)
+
+	grpc := service.NewGrpcServer(conf.Conf)
+	service.GrpcRun(ctx, grpc, errCh)
 
 	go func() {
 		for {

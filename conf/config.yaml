@@ -1,6 +1,16 @@
 http:
   model: debug
   port: 9000
+  servicename: "http"
+
+
+grpc:
+  port: "9100"
+  servicename: "grpc"
+
 redis:
   dsn: localhost:6379
   password:
+
+jaeger:
+  port: "127.0.0.1:6831"

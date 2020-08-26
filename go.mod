@@ -12,13 +12,17 @@ require (
 	github.com/golang/protobuf v1.3.3
 	github.com/google/gopacket v1.1.17
 	github.com/gorilla/websocket v1.4.2
+	github.com/grpc-ecosystem/go-grpc-middleware v1.2.1
 	github.com/jehiah/go-strftime v0.0.0-20171201141054-1d33003b3869 // indirect
 	github.com/lestrrat-go/file-rotatelogs v2.3.0+incompatible
 	github.com/lestrrat-go/strftime v1.0.1 // indirect
+	github.com/opentracing/opentracing-go v1.2.0
 	github.com/spf13/viper v1.7.0
 	github.com/swaggo/gin-swagger v1.2.0
 	github.com/tebeka/strftime v0.1.5 // indirect
+	github.com/uber/jaeger-client-go v2.25.0+incompatible
+	github.com/uber/jaeger-lib v2.2.0+incompatible // indirect
 	go.uber.org/zap v1.15.0
-	google.golang.org/genproto v0.0.0-20191108220845-16a3f7862a1a
-	google.golang.org/grpc v1.25.1
+	google.golang.org/genproto v0.0.0-20200423170343-7949de9c1215
+	google.golang.org/grpc v1.29.1
 )

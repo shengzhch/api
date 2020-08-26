@@ -70,7 +70,7 @@ func wrapper(f interface{}) func(*gin.Context) {
 	}
 }
 
-func Register(app *gin.Engine) {
+func RegisterHttp(app *gin.Engine) {
 	app.StaticFile("/api/swagger.json", "dto/api.swagger.json")
 	url := ginSwagger.URL("/api/swagger.json")
 	app.GET("/api/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler, url))
@@ -81,7 +81,6 @@ func Register(app *gin.Engine) {
 	}
 	store.Options(sessions.Options{MaxAge: 84200, Path: "/"})
 	app.Use(sessions.Sessions("api", store))
-	//sso 单点登录
 	sso := app.Group("/sso")
 	{
 		sso.GET("/login", wrapper(controller.Login))
@@ -93,6 +92,13 @@ func Register(app *gin.Engine) {
 	simu := app.Group("simu")
 	{
 		simu.GET("/monitor/start", controller.MoniStart)
+	}
+
+	//
+	jae := app.Group("jae", middleware.SetTracer())
+	{
+		jae.GET("/jae/welcome", controller.WelcomeWithJae)
+		jae.GET("/jae/welcome2", controller.WelcomeWithJae2)
 	}
 
 }

@@ -1,6 +1,5 @@
 package log
 
-
 var defaultLogger *Logger
 
 func init() {
@@ -33,6 +32,11 @@ func Debug(args ...interface{}) {
 // Info prints a info-level log by default logger instance.
 func Info(args ...interface{}) {
 	defaultLogger.Info(args...)
+}
+
+// Info prints a info-level log by default logger instance.
+func Infow(msg string, keysAndValues ...interface{}) {
+	defaultLogger.Infow(msg, keysAndValues...)
 }
 
 // Warn prints a warn-level log by default logger instance.
