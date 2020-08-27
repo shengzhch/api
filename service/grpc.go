@@ -48,13 +48,13 @@ func newGRPC(c *conf.Config) *grpc.Server {
 }
 
 func GrpcRun(ctx context.Context, s *GrpcServer, errCh chan error) {
-	var listenCh = make(chan net.Listener, 1)
+	//var listenCh = make(chan net.Listener, 1)
 	go func() {
 		lis, err := net.Listen("tcp", "0.0.0.0:"+s.Port)
 		if err != nil {
 			log.Fatalf("Failed to listen: %v", err)
 		}
-		listenCh <- lis
+		//listenCh <- lis
 		log.Infof("Starting grpc on 0.0.0.0:%v", s.Port)
 		router.RegisterGrpc(s.App)
 		if err := s.App.Serve(lis); err != nil {
@@ -65,14 +65,22 @@ func GrpcRun(ctx context.Context, s *GrpcServer, errCh chan error) {
 	go func() {
 		<-ctx.Done()
 		s.App.GracefulStop()
-		lis, ok := <-listenCh
-		if ok {
-			err := lis.Close()
-			if err != nil {
-				errCh <- err
-			} else {
-				log.Info("list stop")
-			}
-		}
+		log.Info("grpc server has shut down")
+		//listener has been close
+
+		//lis, ok := <-listenCh
+		//if ok {
+		//	err := lis.Close()
+		//	if err != nil {
+		//		log.Error(err)
+		//		select {
+		//		case errCh <- err:
+		//		default:
+		//			log.Error("send err to channel failed, err", err)
+		//		}
+		//	} else {
+		//		log.Info("grpc list stop")
+		//	}
+		//}
 	}()
 }

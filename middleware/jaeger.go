@@ -28,7 +28,7 @@ func InitTracer(jae conf.Jaeger) {
 			LocalAgentHostPort: jae.Port,
 		},
 
-		ServiceName: "MAIN",
+		ServiceName: "http",
 	}
 
 	tracer, _, err := cfg.NewTracer(jaegerConfig.Logger(jaeger.StdLogger))

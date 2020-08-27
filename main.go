@@ -31,6 +31,7 @@ func main() {
 	grpc := service.NewGrpcServer(conf.Conf)
 	service.GrpcRun(ctx, grpc, errCh)
 
+	finishCh := make(chan struct{})
 	go func() {
 		for {
 			select {
@@ -40,6 +41,7 @@ func main() {
 				}
 				if !ok {
 					log.Info("error channel close")
+					finishCh <- struct{}{}
 					return
 				}
 			}
@@ -54,11 +56,9 @@ func main() {
 		switch s {
 		case syscall.SIGQUIT, syscall.SIGTERM, syscall.SIGSTOP, syscall.SIGINT, syscall.SIGHUP:
 			cancel()
-			close(errCh)
 			time.Sleep(100 * time.Millisecond)
-			return
-		default:
-			//todo
+			close(errCh)
+			<-finishCh
 			return
 		}
 	}

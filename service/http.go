@@ -47,7 +47,11 @@ func HttpRun(ctx context.Context, s *HttpServer, errCh chan error) {
 		<-ctx.Done()
 		err := srv.Shutdown(context.Background())
 		if err != nil {
-			errCh <- err
+			select {
+			case errCh <- err:
+			default:
+				log.Error("send err to channel failed, err", err)
+			}
 		} else {
 			log.Info("http server has shut down")
 		}
